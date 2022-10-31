@@ -1,7 +1,6 @@
 import styles from '../../styles/Pokemon.module.css'
 
 import Image from 'next/image'
-import { useEffect } from 'react'
 
 export const getStaticPaths = async () => {
   const maxPokemons = 251
@@ -29,14 +28,6 @@ export const getStaticProps = async ({ params }) => {
   const id = params?.pokemonId
   const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
   const results = await data.json()
-  // if (!results) {
-  //   return {
-  //     redirect: {
-  //       destination: '/',
-  //       permanent: false,
-  //     },
-  //   };
-  // }
   return { props: { pokemon : results  }};
 };
 
