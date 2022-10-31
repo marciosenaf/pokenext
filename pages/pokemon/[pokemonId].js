@@ -1,6 +1,7 @@
 import styles from '../../styles/Pokemon.module.css'
 
 import Image from 'next/image'
+import { useEffect } from 'react'
 
 export const getStaticPaths = async () => {
   const maxPokemons = 251
@@ -11,8 +12,9 @@ export const getStaticPaths = async () => {
   const data = await res.json()
 
   const paths = data.results.map((pokemon, index) => {
+    console.log(index.toString())
     return {
-      params: { pokemonId: index.toString() },
+      params: { pokemonId: (index +1) .toString() },
     }
   })
 
@@ -22,20 +24,23 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async (context) => {
-  const id = context.params.pokemonId
 
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+export const getStaticProps = async ({ params }) => {
+  const id = params?.pokemonId
+  const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+  const results = await data.json()
+  // if (!results) {
+  //   return {
+  //     redirect: {
+  //       destination: '/',
+  //       permanent: false,
+  //     },
+  //   };
+  // }
+  return { props: { pokemon : results  }};
+};
 
-  const data = await res.json()
-
-  return {
-    props: { pokemon: data },
-  }
-}
-
-export default function Pokemon({ pokemon }) {
-  console.log(pokemon)
+function Pokemon({ pokemon }) {
   return (
     <div className={styles.pokemon_container}>
       <h1 className={styles.title}>{pokemon.name}</h1>
@@ -75,3 +80,9 @@ export default function Pokemon({ pokemon }) {
     </div>
   )
 }
+
+export default Pokemon
+
+
+
+
