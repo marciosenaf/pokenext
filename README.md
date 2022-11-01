@@ -10,10 +10,10 @@ Este Projeto e uma aplicacao que consulta os pokemons, suas evolucoes e especifi
 Link da API Publica: https://pokeapi.co/api/v2/pokemon/
 
 ## Layout no mobile
-![Mobile ](https://github.com/marciosenaf/marcio-DEVendas/blob/main/src/assets/images/a2github.png)
+![Mobile ](https://github.com/marciosenaf/pokenext/blob/main/public/images/mobile.readme.png)
 
 ## Layout no computador
-![Web](https://github.com/marciosenaf/marcio-DEVendas/blob/main/src/assets/images/a1github.png)
+![Web](https://github.com/marciosenaf/pokenext/blob/main/public/images/computer.readme.png)
 
 # Tecnologias utilizadas
 
