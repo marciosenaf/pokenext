@@ -18,7 +18,7 @@ Link da API Publica: https://pokeapi.co/api/v2/pokemon/
 # Tecnologias utilizadas
 
 - linguagem de Programacao JavaScript 
-- feito no Framework Next js
+- Ultilizando no Framework Next js
 
 ## Implantação em produção
 - Vercel
