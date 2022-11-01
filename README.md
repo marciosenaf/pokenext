@@ -1,7 +1,7 @@
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/marciosenaf/pokenext/blob/main/LICENSE) 
 
 
-# Sobre o projeto POKENEXT
+# Sobre o Pokenext
 
 Link do Projeto: https://pokenext-cjm1.vercel.app/
 
